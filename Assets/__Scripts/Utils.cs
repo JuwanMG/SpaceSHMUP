@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-
+using System;
 
 public enum BoundsTest {
 	center,			// is the center of the gameObject on screen?
@@ -27,8 +27,12 @@ public class Utils : MonoBehaviour
 		return (b0);
 	}
 
+    internal static void SetCameraBounds(Component camera)
+    {
+        throw new NotImplementedException();
+    }
 
-	public static Bounds CombineBoundsOfChildren(GameObject go) 
+    public static Bounds CombineBoundsOfChildren(GameObject go) 
 	{
 		Bounds b = new Bounds (Vector3.zero, Vector3.zero);
 		if (go.GetComponent<Renderer>() != null) {
