@@ -20,7 +20,7 @@ public class Projectile : MonoBehaviour {
 
     void Awake()
     {
-        InvokeRepeating("CheckOffscreen", 2f, 2f);
+        InvokeRepeating("CheckOffScreen", 2f, 2f);
     }
 
     public void SetType(WeaponType eType)
@@ -30,7 +30,7 @@ public class Projectile : MonoBehaviour {
         GetComponent<Renderer>().material.color = def.projectileColor;
     }
 
-    void CheckOffscreen()
+    void CheckOffScreen()
     {
         if (Utils.ScreenBoundsCheck(GetComponent<Collider>().bounds, BoundsTest.offScreen) != Vector3.zero)
         {
